@@ -5,10 +5,10 @@ class MainNavigator: NSObject {
     
     private var navigationController: UINavigationController
     private var window: UIWindow?
-//    private let bookListNavigator = BookListNavigator()
+    private let contentNavigator = ContentNavigator()
     
     override init() {
-//        self.navigationController = bookListNavigator.navController
+        self.navigationController = contentNavigator.navController
         super.init()
     }
     
