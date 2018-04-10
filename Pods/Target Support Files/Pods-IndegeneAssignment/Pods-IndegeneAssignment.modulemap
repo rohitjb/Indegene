@@ -1,0 +1,6 @@
+framework module Pods_IndegeneAssignment {
+  umbrella header "Pods-IndegeneAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}
