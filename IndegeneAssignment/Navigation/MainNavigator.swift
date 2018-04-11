@@ -5,7 +5,7 @@ class MainNavigator: NSObject {
     
     private var navigationController: UINavigationController
     private var window: UIWindow?
-    private let contentNavigator = ContentNavigator()
+    private let contentNavigator = IndengeContentNavigator()
     
     override init() {
         self.navigationController = contentNavigator.navController

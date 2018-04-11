@@ -3,8 +3,15 @@ import UIKit
 class ContentViewController: UIViewController {
 
     private let contentView = ContentView()
+    private let presenter: ContentPresenter
     
     init(navigator: ContentNavigator) {
+        let cacheDataSource = IndengeContentDataSource(fetcher: IndgeneContentFetcher())
+        let useCase = IndengeContentUseCase(dataSource: cacheDataSource)
+        self.presenter = ContentPresenter(useCase: useCase,
+                                          displayer: contentView,
+                                          contentNavigator: navigator)
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -18,8 +25,12 @@ class ContentViewController: UIViewController {
         contentView.pinToSuperviewEdges()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func viewDidLoad() {
+        presenter.startPresenting()
+    }
+
+    deinit {
+        presenter.stopPresenting()
     }
 }
 

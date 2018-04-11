@@ -2,6 +2,15 @@ import UIKit
 import Foundation
 
 class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    private var toDetailAction: ((String) -> Void)?
+    
+    func attachListener(listener: ContentActionListener) {
+        toDetailAction = listener.toDetailAction
+    }
+    
+    func detachListener() {
+        toDetailAction = nil
+    }
     
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {

@@ -1,10 +1,11 @@
 import UIKit
 
-class ContentView: UIView {
+class ContentView: UIView, ContentDisplayer {
     private let layout = UICollectionViewFlowLayout()
     private let collectionView: UICollectionView
     private let selectionView = UIView()
     private let adapter = ContentAdapter()
+    private var actionListener: ContentActionListener?
 
     override init(frame: CGRect) {
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -35,4 +36,13 @@ class ContentView: UIView {
     private func applyConstraints() {
         collectionView.pinToSuperviewEdges()
     }
+    
+    func attachListener(listener: ContentActionListener) {
+        actionListener = listener
+    }
+    
+    func detachListener() {
+        adapter.detachListener()
+    }
+
 }
