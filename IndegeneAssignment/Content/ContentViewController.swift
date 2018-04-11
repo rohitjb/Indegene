@@ -2,6 +2,8 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
+    private let contentView = ContentView()
+    
     init(navigator: ContentNavigator) {
         super.init(nibName: nil, bundle: nil)
     }
@@ -10,9 +12,10 @@ class ContentViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = UIColor.blue
+    override func loadView() {
+        super.loadView()
+        view.addSubview(contentView)
+        contentView.pinToSuperviewEdges()
     }
     
     override func didReceiveMemoryWarning() {
