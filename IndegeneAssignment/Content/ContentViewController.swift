@@ -56,6 +56,10 @@ class ContentViewController: UIViewController {
         presenter.startPresenting()
     }
 
+//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+//        print("sdf")
+//    }
+    
     @objc private func changeMode() {
         switch mode {
         case .list:

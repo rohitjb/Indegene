@@ -46,18 +46,22 @@ class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContentCollectionViewCell
         
-        if indexPath.item  == 0 {
-            cell.backgroundColor = UIColor.green
-        } else if indexPath.item % 2 == 0 {
-            cell.backgroundColor = UIColor.black
-        }else if indexPath.item % 3 == 0 {
-            cell.backgroundColor = UIColor.blue
-        }  else {
-            cell.backgroundColor = UIColor.brown
+        let content =  contents[indexPath.item]
+        switch content.contentType {
+        case .image(let url):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContentCollectionViewCell
+            print(url)
+            return cell
+        case .pdf(let url):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContentCollectionViewCell
+            print(url)
+            return cell
+        case .video(let url):
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContentCollectionViewCell
+            print(url)
+            return cell
         }
-        return cell
     }
     
     func sizeForView(width: CGFloat) -> CGSize {

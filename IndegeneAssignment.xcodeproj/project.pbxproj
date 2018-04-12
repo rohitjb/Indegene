@@ -26,6 +26,9 @@
 		9E071B3F207D47CF00FA15CD /* UIView+PinToSuperviewEdges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E071B3C207D47CF00FA15CD /* UIView+PinToSuperviewEdges.swift */; };
 		9E449322207EDE0300CEED01 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E449321207EDE0300CEED01 /* ContentModel.swift */; };
 		9E449326207EEFA100CEED01 /* ErrorViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E449325207EEFA100CEED01 /* ErrorViewState.swift */; };
+		9E470767207FB0E5002047D9 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E470766207FB0E5002047D9 /* AsyncImageView.swift */; };
+		9E470769207FB331002047D9 /* URLSessionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E470768207FB331002047D9 /* URLSessionFactory.swift */; };
+		9E47076B207FB61D002047D9 /* DataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E47076A207FB61D002047D9 /* DataFetcher.swift */; };
 		9E60C64A207E7AE500A60B13 /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60C649207E7AE500A60B13 /* ContentRepository.swift */; };
 		9EFFE542207E5C09006B2964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE541207E5C09006B2964 /* ContentView.swift */; };
 		9EFFE544207E5CE2006B2964 /* ContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE543207E5CE2006B2964 /* ContentAdapter.swift */; };
@@ -80,6 +83,9 @@
 		9E071B3C207D47CF00FA15CD /* UIView+PinToSuperviewEdges.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+PinToSuperviewEdges.swift"; sourceTree = "<group>"; };
 		9E449321207EDE0300CEED01 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		9E449325207EEFA100CEED01 /* ErrorViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewState.swift; sourceTree = "<group>"; };
+		9E470766207FB0E5002047D9 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		9E470768207FB331002047D9 /* URLSessionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFactory.swift; sourceTree = "<group>"; };
+		9E47076A207FB61D002047D9 /* DataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetcher.swift; sourceTree = "<group>"; };
 		9E60C649207E7AE500A60B13 /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
 		9EFFE541207E5C09006B2964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9EFFE543207E5CE2006B2964 /* ContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAdapter.swift; sourceTree = "<group>"; };
@@ -169,11 +175,12 @@
 		9E071AF5207D29A400FA15CD /* IndegeneAssignment */ = {
 			isa = PBXGroup;
 			children = (
-				9E60C64B207E809700A60B13 /* ContentModel */,
 				9E071B33207D444D00FA15CD /* Adapter */,
 				9E071B24207D31BF00FA15CD /* Application */,
 				9EFFE545207E6B92006B2964 /* CollectionViewCell */,
 				9E071B26207D321400FA15CD /* Content */,
+				9E60C64B207E809700A60B13 /* ContentModel */,
+				9E470765207FB0E5002047D9 /* CustomImageView */,
 				9E071B2F207D430F00FA15CD /* Navigation */,
 				9E071B28207D324100FA15CD /* Networking */,
 				9E071B36207D44F300FA15CD /* Repository */,
@@ -219,7 +226,6 @@
 				9E071B2D207D430800FA15CD /* ContentPresenter.swift */,
 				9EFFE548207E7292006B2964 /* ContentUseCase.swift */,
 				9EFFE54A207E730B006B2964 /* ContentDataSource.swift */,
-				9E60C649207E7AE500A60B13 /* ContentRepository.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -227,6 +233,8 @@
 		9E071B28207D324100FA15CD /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				9E470768207FB331002047D9 /* URLSessionFactory.swift */,
+				9E47076A207FB61D002047D9 /* DataFetcher.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 		9E071B36207D44F300FA15CD /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				9E60C649207E7AE500A60B13 /* ContentRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -282,6 +291,14 @@
 				9E071B3C207D47CF00FA15CD /* UIView+PinToSuperviewEdges.swift */,
 			);
 			path = UIKitExtension;
+			sourceTree = "<group>";
+		};
+		9E470765207FB0E5002047D9 /* CustomImageView */ = {
+			isa = PBXGroup;
+			children = (
+				9E470766207FB0E5002047D9 /* AsyncImageView.swift */,
+			);
+			path = CustomImageView;
 			sourceTree = "<group>";
 		};
 		9E60C64B207E809700A60B13 /* ContentModel */ = {
@@ -387,6 +404,11 @@
 					9E071AF2207D29A400FA15CD = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					9E071B06207D29A400FA15CD = {
 						CreatedOnToolsVersion = 9.2;
@@ -610,14 +632,17 @@
 				9E071AF7207D29A400FA15CD /* AppDelegate.swift in Sources */,
 				9E071B3D207D47CF00FA15CD /* Edge.swift in Sources */,
 				9EFFE544207E5CE2006B2964 /* ContentAdapter.swift in Sources */,
+				9E470767207FB0E5002047D9 /* AsyncImageView.swift in Sources */,
 				9EFFE547207E6BBE006B2964 /* ContentCollectionViewCell.swift in Sources */,
 				9E071B35207D448F00FA15CD /* MainNavigator.swift in Sources */,
 				9E071B38207D459800FA15CD /* ContentNavigator.swift in Sources */,
 				9EFFE549207E7292006B2964 /* ContentUseCase.swift in Sources */,
+				9E470769207FB331002047D9 /* URLSessionFactory.swift in Sources */,
 				9EFFE542207E5C09006B2964 /* ContentView.swift in Sources */,
 				9E449326207EEFA100CEED01 /* ErrorViewState.swift in Sources */,
 				9E071B3E207D47CF00FA15CD /* UIView+PinToViewEdge.swift in Sources */,
 				9E449322207EDE0300CEED01 /* ContentModel.swift in Sources */,
+				9E47076B207FB61D002047D9 /* DataFetcher.swift in Sources */,
 				9E071B3F207D47CF00FA15CD /* UIView+PinToSuperviewEdges.swift in Sources */,
 				9E60C64A207E7AE500A60B13 /* ContentRepository.swift in Sources */,
 				9EFFE550207E74EE006B2964 /* ContentViewState.swift in Sources */,
