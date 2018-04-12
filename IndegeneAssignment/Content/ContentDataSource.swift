@@ -1,12 +1,19 @@
 import Foundation
 
 protocol ContentDataSource {
+    func loadContent() throws -> Content
 }
 
 class IndengeContentDataSource: ContentDataSource {
-    let fetcher: ContentFetcher
+    let repository: ContentRepository
     
-    init(fetcher: ContentFetcher) {
-        self.fetcher = fetcher
+    init(repository: ContentRepository = IndgeneContentRepository()) {
+        self.repository = repository
+    }
+    
+    func loadContent() throws -> Content {
+        let json = try repository.loadJSON(name: "content1")
+        print(json)
+        return Content(json: [:])
     }
 }

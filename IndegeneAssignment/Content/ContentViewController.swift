@@ -6,7 +6,7 @@ class ContentViewController: UIViewController {
     private let presenter: ContentPresenter
     
     init(navigator: ContentNavigator) {
-        let cacheDataSource = IndengeContentDataSource(fetcher: IndgeneContentFetcher())
+        let cacheDataSource = IndengeContentDataSource(repository: IndgeneContentRepository())
         let useCase = IndengeContentUseCase(dataSource: cacheDataSource)
         self.presenter = ContentPresenter(useCase: useCase,
                                           displayer: contentView,

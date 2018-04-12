@@ -2,7 +2,7 @@ import Foundation
 import RxSwift
 
 protocol ContentUseCase {
-    func contentViewState() -> Observable<ContentViewState>
+    func contentViewState() -> ContentViewState
 }
 
 class IndengeContentUseCase: ContentUseCase {
@@ -12,7 +12,12 @@ class IndengeContentUseCase: ContentUseCase {
         self.dataSource = dataSource
     }
     
-    func contentViewState() -> Observable<ContentViewState> {
-        
+    func contentViewState() -> ContentViewState {
+        do {
+            _ = try dataSource.loadContent()
+        } catch {
+            print(error)
+        }
+        return ContentViewState()
     }
 }

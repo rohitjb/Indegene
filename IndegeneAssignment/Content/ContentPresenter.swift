@@ -26,6 +26,7 @@ class ContentPresenter {
     }
     
     func startPresenting() {
+        print(useCase.contentViewState())
         displayer.attachListener(listener: ContentActionListener(toDetailAction: { url in
             print(url)
         }))
