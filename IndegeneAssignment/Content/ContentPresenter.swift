@@ -1,6 +1,8 @@
 import Foundation
 
 protocol ContentDisplayer {
+    func update(with viewState: ContentViewState)
+    func update(with errorViewState: ErrorViewState)
     func attachListener(listener: ContentActionListener)
     func detachListener()
 }
@@ -35,9 +37,9 @@ class ContentPresenter {
     func update(with dataState: DataState) {
         switch dataState {
         case .idleState(let viewState):
-            print(viewState)
+            displayer.update(with: viewState)
         case .errorState(let errorViewState):
-            print(errorViewState)
+            displayer.update(with: errorViewState)
         }
     }
     

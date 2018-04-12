@@ -37,6 +37,20 @@ class ContentView: UIView, ContentDisplayer {
         collectionView.pinToSuperviewEdges()
     }
     
+    func update(with mode: Mode) {
+        adapter.update(with: mode)
+        layout.invalidateLayout()
+    }
+    
+    func update(with viewState: ContentViewState) {
+        adapter.update(with: viewState)
+        collectionView.reloadData()
+    }
+    
+    func update(with errorViewState: ErrorViewState) {
+        print(errorViewState)
+    }
+
     func attachListener(listener: ContentActionListener) {
         actionListener = listener
     }
