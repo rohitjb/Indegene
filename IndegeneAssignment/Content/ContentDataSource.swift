@@ -1,7 +1,11 @@
 import Foundation
 
+enum JSONParserError: Error {
+    case jsonError(message: String)
+}
+
 protocol ContentDataSource {
-    func loadContent() throws -> Content
+    func loadContent() throws -> [Content]
 }
 
 class IndengeContentDataSource: ContentDataSource {
@@ -11,9 +15,11 @@ class IndengeContentDataSource: ContentDataSource {
         self.repository = repository
     }
     
-    func loadContent() throws -> Content {
-        let json = try repository.loadJSON(name: "content1")
-        print(json)
-        return Content(json: [:])
+    func loadContent() throws -> [Content] {
+        let jsonContent = try repository.loadJSON(name: "content")
+        guard let contents = jsonContent["content"] as? [Json] else {
+            throw JSONParserError.jsonError(message: "Key for content might have changed")
+        }
+        return contents.map({ dict -> Content? in do { return try Content(json: dict) } catch { return nil }}).flatMap { $0 }
     }
 }

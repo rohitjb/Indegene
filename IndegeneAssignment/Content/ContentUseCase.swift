@@ -1,8 +1,13 @@
 import Foundation
 import RxSwift
 
+enum DataState {
+    case idleState(ContentViewState)
+    case errorState(ErrorViewState)
+}
+
 protocol ContentUseCase {
-    func contentViewState() -> ContentViewState
+    func contentDataState() -> DataState
 }
 
 class IndengeContentUseCase: ContentUseCase {
@@ -12,12 +17,11 @@ class IndengeContentUseCase: ContentUseCase {
         self.dataSource = dataSource
     }
     
-    func contentViewState() -> ContentViewState {
+    func contentDataState() -> DataState {
         do {
-            _ = try dataSource.loadContent()
+            return .idleState(ContentViewState(content: try dataSource.loadContent()))
         } catch {
-            print(error)
+            return .errorState(ErrorViewState(error: error))
         }
-        return ContentViewState()
     }
 }

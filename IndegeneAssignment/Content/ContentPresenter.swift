@@ -26,10 +26,19 @@ class ContentPresenter {
     }
     
     func startPresenting() {
-        print(useCase.contentViewState())
-        displayer.attachListener(listener: ContentActionListener(toDetailAction: { url in
-            print(url)
+        update(with: useCase.contentDataState())
+        displayer.attachListener(listener: ContentActionListener(toDetailAction: { path in
+            print(path)
         }))
+    }
+    
+    func update(with dataState: DataState) {
+        switch dataState {
+        case .idleState(let viewState):
+            print(viewState)
+        case .errorState(let errorViewState):
+            print(errorViewState)
+        }
     }
     
     func stopPresenting() {

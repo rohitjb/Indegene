@@ -1,6 +1,10 @@
 import Foundation
 
-enum Type {
+enum KeyError: Error {
+    case keyDoesNotMatch
+}
+
+enum Type: String {
     case image
     case pdf
     case video
@@ -13,11 +17,27 @@ enum ContentType {
 }
 
 protocol JsonInitialiable {
-    init(json: Json)
+    init(json: Json) throws
 }
 
 struct Content: JsonInitialiable {
-    init(json: Json) {
+    let contentType: ContentType
+    
+    init(json: Json) throws {
         
+        guard let typeSring = json["type"] as? String,
+            let type = Type(rawValue: typeSring),
+            let url = json["url"] as? String else {
+            throw KeyError.keyDoesNotMatch
+        }
+
+        switch type {
+        case .image:
+            contentType = .image(url)
+        case .pdf:
+            contentType = .pdf(url)
+        case .video:
+            contentType = .video(url)
+        }
     }
 }
