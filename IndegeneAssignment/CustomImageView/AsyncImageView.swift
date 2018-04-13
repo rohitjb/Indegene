@@ -2,12 +2,11 @@ import Foundation
 import UIKit
 
 class AsyncImageView: UIImageView {
-    var dataFetcher: DataFetcher
+    var dataFetcher = IndengeDataFetcher.sharedInstance
     
     override init(frame: CGRect) {
-        let urlSessionFactory = URLSessionFactory(configurationFactory: URLSessionConfigurationFactory())
-        self.dataFetcher = IndengeDataFetcher(urlSessionFactory: urlSessionFactory)
-        
+//        let urlSessionFactory = URLSessionFactory(configurationFactory: URLSessionConfigurationFactory())
+//        self.dataFetcher = IndengeDataFetcher(urlSessionFactory: urlSessionFactory)
         super.init(frame: frame)
         setup()
     }
@@ -31,7 +30,10 @@ class AsyncImageView: UIImageView {
             guard let data = data else {
                 return
             }
-            self.image = UIImage(data: data)
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.image = image
+            }
         }
     }
 }

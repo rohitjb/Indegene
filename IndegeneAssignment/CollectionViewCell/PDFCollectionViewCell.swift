@@ -1,6 +1,6 @@
 import UIKit
 
-class ContentCollectionViewCell: UICollectionViewCell {
+class PDFCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

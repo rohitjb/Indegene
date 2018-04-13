@@ -8,6 +8,13 @@ class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDele
     private var collectionMode: Mode = .list
     private var contents = [Content]()
     
+    func registerCells(with collectionView: UICollectionView) {
+        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: "imageCollectionViewCell")
+        collectionView.register(PDFCollectionViewCell.self, forCellWithReuseIdentifier: "pdfCollectionViewCell")
+        collectionView.register(VideoCollectionViewCell.self, forCellWithReuseIdentifier: "videoCollectionViewCell")
+    }
+    
+    
     func attachListener(listener: ContentActionListener) {
         toDetailAction = listener.toDetailAction
     }
@@ -40,9 +47,9 @@ class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDele
         return size
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        return UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+//    }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,15 +57,15 @@ class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDele
         let content =  contents[indexPath.item]
         switch content.contentType {
         case .image(let url):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContentCollectionViewCell
-            print(url)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+            cell.updateView(with: url)
             return cell
         case .pdf(let url):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContentCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pdfCollectionViewCell", for: indexPath) as! PDFCollectionViewCell
             print(url)
             return cell
         case .video(let url):
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ContentCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCollectionViewCell", for: indexPath) as! VideoCollectionViewCell
             print(url)
             return cell
         }

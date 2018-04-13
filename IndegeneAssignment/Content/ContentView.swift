@@ -19,15 +19,15 @@ class ContentView: UIView, ContentDisplayer {
     
     private func setup() {
         addSubview(collectionView)
-        collectionView.backgroundColor = UIColor.red
-        collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        collectionView.backgroundColor = UIColor.black
         collectionView.isPagingEnabled = true
         
+        adapter.registerCells(with: collectionView)
         collectionView.delegate = adapter
         collectionView.dataSource = adapter
         
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 0
 
         applyConstraints()
@@ -58,5 +58,4 @@ class ContentView: UIView, ContentDisplayer {
     func detachListener() {
         adapter.detachListener()
     }
-
 }
