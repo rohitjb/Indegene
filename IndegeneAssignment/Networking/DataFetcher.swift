@@ -8,14 +8,12 @@ enum DataError: Error {
 }
 
 protocol DataFetcher {
-    func loadData(urlString: String, completionHandler: @escaping (Data?) -> Void)
+    func loadData(urlString: String, completionHandler: @escaping (URL?) -> Void)
 }
 
 class IndengeDataFetcher:  DataFetcher {
     
-    static let sharedInstance = IndengeDataFetcher()
-
-    func loadData(urlString: String, completionHandler: @escaping (Data?) -> Void) {
-        DownloadManager.shared.startDownload(with: urlString)
+    func loadData(urlString: String, completionHandler: @escaping (URL?) -> Void) {
+        DownloadManager.shared.loadData(with: urlString, completionHandler: completionHandler)
     }
 }

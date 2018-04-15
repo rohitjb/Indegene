@@ -2,11 +2,9 @@ import Foundation
 import UIKit
 
 class AsyncImageView: UIImageView {
-    var dataFetcher = IndengeDataFetcher.sharedInstance
+    private let downloadManager = DownloadManager()
     
     override init(frame: CGRect) {
-//        let urlSessionFactory = URLSessionFactory(configurationFactory: URLSessionConfigurationFactory())
-//        self.dataFetcher = IndengeDataFetcher(urlSessionFactory: urlSessionFactory)
         super.init(frame: frame)
         setup()
     }
@@ -16,7 +14,6 @@ class AsyncImageView: UIImageView {
     }
     
     private func setup() {
-//        self.contentMode = .scaleAspectFit
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
     }
@@ -26,11 +23,14 @@ class AsyncImageView: UIImageView {
     }
     
     func loadImage(urlString: String){
-        dataFetcher.loadData(urlString: urlString) { (data) in
-            guard let data = data else {
+        downloadManager.loadData(with: urlString) { (url) in
+            guard let filePath = url else {
                 return
             }
             DispatchQueue.main.async {
+                guard let data = try? Data(contentsOf: filePath) else {
+                    return
+                }
                 let image = UIImage(data: data)
                 self.image = image
             }
