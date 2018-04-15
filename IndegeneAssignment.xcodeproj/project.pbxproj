@@ -36,7 +36,6 @@
 		9E60C64A207E7AE500A60B13 /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60C649207E7AE500A60B13 /* ContentRepository.swift */; };
 		9EDB491320824A9700E9805D /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB491220824A9700E9805D /* LocalFileManager.swift */; };
 		9EDB49172082548800E9805D /* URL+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB49162082548800E9805D /* URL+Query.swift */; };
-		9EDB4919208304EB00E9805D /* URLRequest+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB4918208304EB00E9805D /* URLRequest+URL.swift */; };
 		9EFFE542207E5C09006B2964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE541207E5C09006B2964 /* ContentView.swift */; };
 		9EFFE544207E5CE2006B2964 /* ContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE543207E5CE2006B2964 /* ContentAdapter.swift */; };
 		9EFFE549207E7292006B2964 /* ContentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE548207E7292006B2964 /* ContentUseCase.swift */; };
@@ -99,7 +98,6 @@
 		9E60C649207E7AE500A60B13 /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
 		9EDB491220824A9700E9805D /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		9EDB49162082548800E9805D /* URL+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Query.swift"; sourceTree = "<group>"; };
-		9EDB4918208304EB00E9805D /* URLRequest+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+URL.swift"; sourceTree = "<group>"; };
 		9EFFE541207E5C09006B2964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9EFFE543207E5CE2006B2964 /* ContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAdapter.swift; sourceTree = "<group>"; };
 		9EFFE548207E7292006B2964 /* ContentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUseCase.swift; sourceTree = "<group>"; };
@@ -320,7 +318,6 @@
 				9E4707752080C3E5002047D9 /* URLResponse+Error.swift */,
 				9E4707772080C3FA002047D9 /* String+URL.swift */,
 				9EDB49162082548800E9805D /* URL+Query.swift */,
-				9EDB4918208304EB00E9805D /* URLRequest+URL.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -590,13 +587,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-IndegeneAssignment/Pods-IndegeneAssignment-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ROThumbnailGenerator/ROThumbnailGenerator.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ROThumbnailGenerator.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -665,7 +660,6 @@
 				9EFFE54B207E730B006B2964 /* ContentDataSource.swift in Sources */,
 				9E071AF9207D29A400FA15CD /* ContentViewController.swift in Sources */,
 				9E071AF7207D29A400FA15CD /* AppDelegate.swift in Sources */,
-				9EDB4919208304EB00E9805D /* URLRequest+URL.swift in Sources */,
 				9E4707762080C3E5002047D9 /* URLResponse+Error.swift in Sources */,
 				9EDB49172082548800E9805D /* URL+Query.swift in Sources */,
 				9E071B3D207D47CF00FA15CD /* Edge.swift in Sources */,

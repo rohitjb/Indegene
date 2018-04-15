@@ -20,7 +20,6 @@ class ContentView: UIView, ContentDisplayer {
     private func setup() {
         addSubview(collectionView)
         collectionView.backgroundColor = UIColor.black
-        collectionView.isPagingEnabled = true
         
         adapter.registerCells(with: collectionView)
         collectionView.delegate = adapter
@@ -39,7 +38,9 @@ class ContentView: UIView, ContentDisplayer {
     
     func update(with mode: Mode) {
         adapter.update(with: mode)
-        layout.invalidateLayout()
+        collectionView.performBatchUpdates({
+            self.collectionView.reloadData()
+        }, completion: nil)
     }
     
     func update(with viewState: ContentViewState) {

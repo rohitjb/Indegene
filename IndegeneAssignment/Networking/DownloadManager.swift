@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
     
@@ -39,6 +40,18 @@ class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate 
             return
         }
     }
+    
+    func urlSessionDidFinishEvents(forBackgroundURLSession session: URLSession) {
+        DispatchQueue.main.async {
+            guard let appDelegate = UIApplication.shared.delegate as? AppDelegate,
+                let backgroundCompletionHandler =
+                appDelegate.backgroundCompletionHandler else {
+                    return
+            }
+            backgroundCompletionHandler()
+        }
+    }
+
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
     }

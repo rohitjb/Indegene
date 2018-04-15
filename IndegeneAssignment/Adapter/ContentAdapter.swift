@@ -40,17 +40,13 @@ class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDele
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         var width = UIScreen.main.bounds.width
-        if collectionMode == .grid {
+        if collectionMode == .grid || UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
             width = collectionView.bounds.width/2 - (spacing * 2)
         }
         let size = sizeForView(width: width)
         return size
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
-//    }
-    
+
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -62,11 +58,11 @@ class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDele
             return cell
         case .pdf(let url):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "pdfCollectionViewCell", for: indexPath) as! PDFCollectionViewCell
-            print(url)
+            cell.updateView(with: url)
             return cell
         case .video(let url):
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCollectionViewCell", for: indexPath) as! VideoCollectionViewCell
-            print(url)
+            cell.updateView(with: url)
             return cell
         }
     }

@@ -24,13 +24,10 @@ class AsyncImageView: UIImageView {
     
     func loadImage(urlString: String){
         downloadManager.loadData(with: urlString) { (url) in
-            guard let filePath = url else {
+            guard let filePath = url, let data = try? Data(contentsOf: filePath) else {
                 return
             }
             DispatchQueue.main.async {
-                guard let data = try? Data(contentsOf: filePath) else {
-                    return
-                }
                 let image = UIImage(data: data)
                 self.image = image
             }

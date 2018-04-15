@@ -40,7 +40,7 @@ class ContentViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        self.title = "Ingene Conetent"
+        self.title = "Ingdene Conetent"
         
         let modeBarButton = UIBarButtonItem(title: mode.title(),
                                             style: .done,
@@ -56,9 +56,18 @@ class ContentViewController: UIViewController {
         presenter.startPresenting()
     }
 
-//    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-//        print("sdf")
-//    }
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        switch UIDevice.current.orientation{
+        case .portrait:
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        case .landscapeLeft: fallthrough
+        case .landscapeRight:
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        default:
+            print("Another")
+        }
+        contentView.update(with: mode)
+    }
     
     @objc private func changeMode() {
         switch mode {

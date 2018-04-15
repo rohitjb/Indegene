@@ -1,19 +1,12 @@
 PODS:
-  - RxCocoa (4.1.2):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.1.2)
-  - SwiftLint (0.25.0)
+  - ROThumbnailGenerator (2.1.1)
 
 DEPENDENCIES:
-  - RxCocoa (~> 4.1)
-  - RxSwift (~> 4.1)
-  - SwiftLint
+  - ROThumbnailGenerator
 
 SPEC CHECKSUMS:
-  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
-  SwiftLint: e14651157288e9e01d6e1a71db7014fb5744a8ea
+  ROThumbnailGenerator: 4e01a887fc8b4e46a7fa6cd7337dd031a46d6a29
 
-PODFILE CHECKSUM: 176a34f3fe4e5062a361376c865ad2dd86a0bb1c
+PODFILE CHECKSUM: f2052a1b308b0f20c8034a4280256b34a9c074f2
 
 COCOAPODS: 1.4.0
