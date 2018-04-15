@@ -1,5 +1,4 @@
 import UIKit
-import ROThumbnailGenerator
 import PDFKit
 
 class PDFCollectionViewCell: UICollectionViewCell {
