@@ -19,7 +19,7 @@ class ContentView: UIView, ContentDisplayer {
     
     private func setup() {
         addSubview(collectionView)
-        collectionView.backgroundColor = UIColor.black
+        collectionView.backgroundColor = UIColor.white
         
         adapter.registerCells(with: collectionView)
         collectionView.delegate = adapter

@@ -3,7 +3,6 @@ import UIKit
 
 class AsyncImageView: UIImageView {
     private let downloadManager = DownloadManager()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -22,12 +21,13 @@ class AsyncImageView: UIImageView {
         self.image = nil
     }
     
-    func loadImage(urlString: String){
+    func loadImage(urlString: String, completion: (() -> Void)? = nil){
         downloadManager.loadData(with: urlString) { (url) in
             guard let filePath = url, let data = try? Data(contentsOf: filePath) else {
                 return
             }
             DispatchQueue.main.async {
+                completion?()
                 let image = UIImage(data: data)
                 self.image = image
             }

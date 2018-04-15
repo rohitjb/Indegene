@@ -40,7 +40,7 @@ class ContentViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        self.title = "Ingdene Conetent"
+        self.title = "Indegene Conetent"
         
         let modeBarButton = UIBarButtonItem(title: mode.title(),
                                             style: .done,

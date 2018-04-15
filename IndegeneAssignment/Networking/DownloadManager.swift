@@ -3,7 +3,7 @@ import UIKit
 
 class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate {
     
-    static var shared = DownloadManager()
+//    static var shared = DownloadManager()
     var pathCompletionHandler: ((URL?) -> Void)? = nil
     let localFileManager: LocalFileManager
 

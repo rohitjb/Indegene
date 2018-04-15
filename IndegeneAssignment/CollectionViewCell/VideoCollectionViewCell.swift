@@ -3,7 +3,7 @@ import AVFoundation
 
 class VideoCollectionViewCell: UICollectionViewCell {
     let videoImageView = UIImageView()
-    let downloadManager = DownloadManager.shared
+    let downloadManager = DownloadManager()
     let playButton = UIButton()
 
     override init(frame: CGRect) {
@@ -16,6 +16,7 @@ class VideoCollectionViewCell: UICollectionViewCell {
     }
     
     private func setup() {
+        backgroundColor = UIColor.black
         addSubview(videoImageView)
         addSubview(playButton)
         
