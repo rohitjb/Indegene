@@ -10,13 +10,15 @@ protocol ContentDataSource {
 
 class IndengeContentDataSource: ContentDataSource {
     let repository: ContentRepository
+    let fileName: String
     
-    init(repository: ContentRepository = IndgeneContentRepository()) {
+    init(repository: ContentRepository = IndgeneContentRepository(), fileName: String = "content") {
         self.repository = repository
+        self.fileName = fileName
     }
     
     func loadContent() throws -> [Content] {
-        let jsonContent = try repository.loadJSON(name: "content")
+        let jsonContent = try repository.loadJSON(name: fileName)
         guard let contents = jsonContent["content"] as? [Json] else {
             throw JSONParserError.jsonError(message: "Key for content might have changed")
         }

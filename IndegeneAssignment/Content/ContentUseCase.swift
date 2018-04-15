@@ -18,7 +18,8 @@ class IndengeContentUseCase: ContentUseCase {
     
     func contentDataState() -> DataState {
         do {
-            return .idleState(ContentViewState(content: try dataSource.loadContent()))
+            let contents = try dataSource.loadContent()
+            return .idleState(ContentViewState(content: contents))
         } catch {
             return .errorState(ErrorViewState(error: error))
         }
