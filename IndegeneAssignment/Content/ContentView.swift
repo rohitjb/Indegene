@@ -54,6 +54,7 @@ class ContentView: UIView, ContentDisplayer {
 
     func attachListener(listener: ContentActionListener) {
         actionListener = listener
+        adapter.attachListener(listener: listener)
     }
     
     func detachListener() {

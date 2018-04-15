@@ -36,6 +36,9 @@
 		9E60C64A207E7AE500A60B13 /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60C649207E7AE500A60B13 /* ContentRepository.swift */; };
 		9EDB491320824A9700E9805D /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB491220824A9700E9805D /* LocalFileManager.swift */; };
 		9EDB49172082548800E9805D /* URL+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB49162082548800E9805D /* URL+Query.swift */; };
+		9EDB491B2083436300E9805D /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB491A2083436300E9805D /* ImageViewController.swift */; };
+		9EDB491D2083437100E9805D /* PDFDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB491C2083437100E9805D /* PDFDetailViewController.swift */; };
+		9EDB491F2083438200E9805D /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB491E2083438200E9805D /* VideoDetailViewController.swift */; };
 		9EFFE542207E5C09006B2964 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE541207E5C09006B2964 /* ContentView.swift */; };
 		9EFFE544207E5CE2006B2964 /* ContentAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE543207E5CE2006B2964 /* ContentAdapter.swift */; };
 		9EFFE549207E7292006B2964 /* ContentUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFFE548207E7292006B2964 /* ContentUseCase.swift */; };
@@ -98,6 +101,9 @@
 		9E60C649207E7AE500A60B13 /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
 		9EDB491220824A9700E9805D /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		9EDB49162082548800E9805D /* URL+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Query.swift"; sourceTree = "<group>"; };
+		9EDB491A2083436300E9805D /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		9EDB491C2083437100E9805D /* PDFDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFDetailViewController.swift; sourceTree = "<group>"; };
+		9EDB491E2083438200E9805D /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		9EFFE541207E5C09006B2964 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9EFFE543207E5CE2006B2964 /* ContentAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAdapter.swift; sourceTree = "<group>"; };
 		9EFFE548207E7292006B2964 /* ContentUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentUseCase.swift; sourceTree = "<group>"; };
@@ -185,6 +191,7 @@
 		9E071AF5207D29A400FA15CD /* IndegeneAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				9EDB49202083438D00E9805D /* DetailControllers */,
 				9E071B33207D444D00FA15CD /* Adapter */,
 				9E071B24207D31BF00FA15CD /* Application */,
 				9EFFE545207E6B92006B2964 /* CollectionViewCell */,
@@ -336,6 +343,16 @@
 				9EDB491220824A9700E9805D /* LocalFileManager.swift */,
 			);
 			path = FileManager;
+			sourceTree = "<group>";
+		};
+		9EDB49202083438D00E9805D /* DetailControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9EDB491A2083436300E9805D /* ImageViewController.swift */,
+				9EDB491C2083437100E9805D /* PDFDetailViewController.swift */,
+				9EDB491E2083438200E9805D /* VideoDetailViewController.swift */,
+			);
+			path = DetailControllers;
 			sourceTree = "<group>";
 		};
 		9EFFE545207E6B92006B2964 /* CollectionViewCell */ = {
@@ -662,6 +679,7 @@
 				9E071AF7207D29A400FA15CD /* AppDelegate.swift in Sources */,
 				9E4707762080C3E5002047D9 /* URLResponse+Error.swift in Sources */,
 				9EDB49172082548800E9805D /* URL+Query.swift in Sources */,
+				9EDB491B2083436300E9805D /* ImageViewController.swift in Sources */,
 				9E071B3D207D47CF00FA15CD /* Edge.swift in Sources */,
 				9EFFE544207E5CE2006B2964 /* ContentAdapter.swift in Sources */,
 				9E470767207FB0E5002047D9 /* AsyncImageView.swift in Sources */,
@@ -670,7 +688,9 @@
 				9E071B35207D448F00FA15CD /* MainNavigator.swift in Sources */,
 				9E071B38207D459800FA15CD /* ContentNavigator.swift in Sources */,
 				9EFFE549207E7292006B2964 /* ContentUseCase.swift in Sources */,
+				9EDB491F2083438200E9805D /* VideoDetailViewController.swift in Sources */,
 				9E4707712080BD62002047D9 /* PDFCollectionViewCell.swift in Sources */,
+				9EDB491D2083437100E9805D /* PDFDetailViewController.swift in Sources */,
 				9EFFE542207E5C09006B2964 /* ContentView.swift in Sources */,
 				9E4707B420813775002047D9 /* DownloadManager.swift in Sources */,
 				9E449326207EEFA100CEED01 /* ErrorViewState.swift in Sources */,

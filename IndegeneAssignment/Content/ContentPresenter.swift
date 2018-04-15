@@ -8,8 +8,8 @@ protocol ContentDisplayer {
 }
 
 struct ContentActionListener {
-    let toDetailAction: (String) -> Void
-    init(toDetailAction: @escaping (String) -> Void) {
+    let toDetailAction: (ContentType) -> Void
+    init(toDetailAction: @escaping (ContentType) -> Void) {
         self.toDetailAction = toDetailAction
     }
 }
@@ -29,8 +29,16 @@ class ContentPresenter {
     
     func startPresenting() {
         update(with: useCase.contentDataState())
-        displayer.attachListener(listener: ContentActionListener(toDetailAction: { path in
-            print(path)
+        displayer.attachListener(listener: ContentActionListener(toDetailAction: {[weak self] contentType in
+            switch contentType {
+            case .image(let url):
+                print(url)
+                self?.contentNavigator.toImageDetail(url: url)
+            case .pdf(let url):
+                self?.contentNavigator.toPDFDetail(url: url)
+            case .video(let url):
+                self?.contentNavigator.toVideoDetail(url: url)
+            }
         }))
     }
     

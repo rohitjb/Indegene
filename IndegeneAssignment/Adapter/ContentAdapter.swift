@@ -4,7 +4,7 @@ import Foundation
 class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     private let spacing: CGFloat = 2
-    private var toDetailAction: ((String) -> Void)?
+    private var toDetailAction: ((ContentType) -> Void)?
     private var collectionMode: Mode = .list
     private var contents = [Content]()
     
@@ -66,6 +66,12 @@ class ContentAdapter: NSObject, UICollectionViewDataSource, UICollectionViewDele
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let content =  contents[indexPath.item]
+        toDetailAction?(content.contentType)
+    }
+    
     
     func sizeForView(width: CGFloat) -> CGSize {
         let height = (width * 3)/4

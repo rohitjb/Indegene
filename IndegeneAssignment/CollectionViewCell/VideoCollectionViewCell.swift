@@ -4,7 +4,8 @@ import AVFoundation
 class VideoCollectionViewCell: UICollectionViewCell {
     let videoImageView = UIImageView()
     let downloadManager = DownloadManager.shared
-    
+    let playButton = UIButton()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -16,7 +17,19 @@ class VideoCollectionViewCell: UICollectionViewCell {
     
     private func setup() {
         addSubview(videoImageView)
+        addSubview(playButton)
+        
+        let image = UIImage(named: "play")
+        playButton.setImage(image, for: .normal)
+
         videoImageView.pinToSuperviewEdges()
+        
+        playButton.pinCenterX(to: self)
+        playButton.pinCenterY(to: self)
+        
+        playButton.addWidthConstraint(constant: 40)
+        playButton.addHeightConstraint(constant: 40)
+
     }
     
     func updateView(with url: String) {
