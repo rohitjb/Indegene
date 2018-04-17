@@ -1,6 +1,0 @@
-framework module Pods_IndegeneAssignmentUITests {
-  umbrella header "Pods-IndegeneAssignmentUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
