@@ -1,8 +1,8 @@
 # Indegene
 
-What does this PR do?
+What does this Assignment do?
 -----------
-This PR download the set of data and present it on the `List` as well as in grid view. Apart from this I have implemented the file caching also. I have taken care of the orientation as well So when device is in landscape mode then only grid view will be enabled because If we don't do so then as per our aspect ration i.e. 4:3 height crosses the screen area and view look weird.
+This Assignment download the set of data and present it on the `List` as well as in grid view. Apart from this I have implemented the file caching also. I have taken care of the orientation as well So when device is in landscape mode then only grid view will be enabled because If we don't do so then as per our aspect ration i.e. 4:3 height crosses the screen area and view look weird.
 
 Any background context you want to provide?
 ------------
