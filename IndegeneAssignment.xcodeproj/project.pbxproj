@@ -33,6 +33,7 @@
 		9E4707782080C3FA002047D9 /* String+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4707772080C3FA002047D9 /* String+URL.swift */; };
 		9E4707B420813775002047D9 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E4707B320813775002047D9 /* DownloadManager.swift */; };
 		9E60C64A207E7AE500A60B13 /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E60C649207E7AE500A60B13 /* ContentRepository.swift */; };
+		9EB58C4C2085B5DF00E7283E /* UInt32+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB58C4B2085B5DF00E7283E /* UInt32+Random.swift */; };
 		9EDB491320824A9700E9805D /* LocalFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB491220824A9700E9805D /* LocalFileManager.swift */; };
 		9EDB49172082548800E9805D /* URL+Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB49162082548800E9805D /* URL+Query.swift */; };
 		9EDB491B2083436300E9805D /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDB491A2083436300E9805D /* ImageViewController.swift */; };
@@ -100,6 +101,7 @@
 		9E4707772080C3FA002047D9 /* String+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URL.swift"; sourceTree = "<group>"; };
 		9E4707B320813775002047D9 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		9E60C649207E7AE500A60B13 /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
+		9EB58C4B2085B5DF00E7283E /* UInt32+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt32+Random.swift"; sourceTree = "<group>"; };
 		9EDB491220824A9700E9805D /* LocalFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileManager.swift; sourceTree = "<group>"; };
 		9EDB49162082548800E9805D /* URL+Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Query.swift"; sourceTree = "<group>"; };
 		9EDB491A2083436300E9805D /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 				9E4707752080C3E5002047D9 /* URLResponse+Error.swift */,
 				9E4707772080C3FA002047D9 /* String+URL.swift */,
 				9EDB49162082548800E9805D /* URL+Query.swift */,
+				9EB58C4B2085B5DF00E7283E /* UInt32+Random.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				9E449322207EDE0300CEED01 /* ContentModel.swift in Sources */,
 				9E071B3F207D47CF00FA15CD /* UIView+PinToSuperviewEdges.swift in Sources */,
 				9E60C64A207E7AE500A60B13 /* ContentRepository.swift in Sources */,
+				9EB58C4C2085B5DF00E7283E /* UInt32+Random.swift in Sources */,
 				9EDB491320824A9700E9805D /* LocalFileManager.swift in Sources */,
 				9EFFE550207E74EE006B2964 /* ContentViewState.swift in Sources */,
 				9E071B2E207D430800FA15CD /* ContentPresenter.swift in Sources */,

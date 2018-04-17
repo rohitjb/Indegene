@@ -12,7 +12,7 @@ class DownloadManager: NSObject, URLSessionDelegate, URLSessionDownloadDelegate 
     }
     
     func makeSessionConfiguration() -> URLSessionConfiguration {
-        let sessionNumber = Int(arc4random_uniform(UInt32(50)))
+        let sessionNumber = Int(UInt32(50).randomNumber())
         let configuration = URLSessionConfiguration.background(withIdentifier: "MySession\(sessionNumber)")
         configuration.isDiscretionary = true
         configuration.sessionSendsLaunchEvents = true
